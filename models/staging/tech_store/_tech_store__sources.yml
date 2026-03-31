@@ -4,9 +4,9 @@ sources:
     schema: tech_store
     tables:
       - name: city
-      - name: customers
-      - name: employees
+      - name: customer
+      - name: employee
       - name: orders
-      - name: products
+      - name: product
       - name: state
       - name: zip
