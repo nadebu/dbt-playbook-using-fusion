@@ -1,0 +1,22 @@
+name: dbt_training
+
+profile: playbook_for_dbt_using_fusion
+
+seed-paths: ["seeds"]
+model-paths: ["models"]
+macro-paths: ["macros"]
+clean-targets:
+  - "target"
+  - "dbt_packages"
+
+seeds:
+  # Builds seeds into '<your_schema_name>_raw'
+  dbt_training:
+    +schema: raw
+
+models:
+  dbt_training:
+    staging:
+      +materialized: view
+    marts:
+      +materialized: table
